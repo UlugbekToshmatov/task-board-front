@@ -19,7 +19,7 @@ export default function LoginPage() {
     reset
   } = useForm<LoginForm>({
     resolver: zodResolver(loginSchema)
-  })
+  });
   const nicknameField = register('nickname');
   const passwordField = register('password');
 
@@ -55,12 +55,12 @@ export default function LoginPage() {
 
   return (
     <div className="form-container">
-      <h2>Please, sign in</h2>
+      <h2 className="form-title">Please, sign in</h2>
       {message && (
         <p className="form-input-error">{message}</p>
       )}
       
-      <form className="dialog-form" onSubmit={handleSubmit(handleFormSubmit)}>
+      <form className="form-dialog" onSubmit={handleSubmit(handleFormSubmit)}>
         <div className="form-input-container">
           <input
             {...nicknameField}
@@ -93,7 +93,6 @@ export default function LoginPage() {
         <button className="form-submit-btn" type="submit" disabled={isSubmitting}>
           Login
         </button>
-        <hr />
         <span>New here? <Link to="/register">Join now</Link></span>
       </form>
     </div>

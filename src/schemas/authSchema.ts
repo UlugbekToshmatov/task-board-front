@@ -16,7 +16,7 @@ export const registerSchema = z.object({
   password: z.string()
     .min(8, { message: "Password must be at least 8 characters long" })
     .regex(/^[a-z0-9_]+$/, { message: "Password can only contain lowercase letters, numbers, and underscores" }),
-  email: z.string().email({ message: "Invalid email address" }).optional(),
+  email: z.string().email({ message: "Invalid email address" }).optional().or(z.literal(''))
 });
 
 export type LoginForm = z.infer<typeof loginSchema>;

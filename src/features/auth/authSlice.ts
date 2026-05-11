@@ -42,11 +42,13 @@ const authSlice = createSlice({
     builder
       .addCase(login.pending, (state) => {
         state.loading = true;
+        state.error = null;
       })
       .addCase(
         login.fulfilled,
         (state, action: PayloadAction<AuthResponse>) => {
           state.loading = false;
+          state.error = null;
           state.user = action.payload.user;
           state.token = action.payload.accessToken;
           localStorage.setItem("user", JSON.stringify(action.payload.user));
@@ -66,11 +68,13 @@ const authSlice = createSlice({
     builder
       .addCase(register.pending, (state) => {
         state.loading = true;
+        state.error = null;
       })
       .addCase(
         register.fulfilled,
         (state, action: PayloadAction<AuthResponse>) => {
           state.loading = false;
+          state.error = null;
           state.user = action.payload.user;
           state.token = action.payload.accessToken;
           localStorage.setItem("user", JSON.stringify(action.payload.user));
