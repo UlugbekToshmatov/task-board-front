@@ -128,12 +128,110 @@ code {
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  width: 100%;
+  max-width: 360px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  box-sizing: border-box;
 }
 
 .form-input-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   gap: 10px;
   width: 100%;
+}
+
+.form-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  font: inherit;
+  color: var(--text-h);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  outline: none;
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease,
+    background-color 120ms ease;
+}
+
+.form-input::placeholder {
+  color: var(--text);
+  opacity: 0.7;
+}
+
+.form-input:hover {
+  border-color: var(--accent-border);
+}
+
+.form-input:focus,
+.form-input:focus-visible {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+.form-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-input-error {
+  width: 100%;
+  font-size: 14px;
+  line-height: 130%;
+  color: #e5484d;
+  text-align: center;
+  margin: -2px 0 0;
+}
+
+.form-submit-btn {
+  width: 100%;
+  padding: 12px 18px;
+  font: inherit;
+  font-weight: 500;
+  color: #fff;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    transform 80ms ease,
+    box-shadow 120ms ease,
+    opacity 120ms ease;
+}
+
+.form-submit-btn:hover:not(:disabled) {
+  box-shadow: var(--shadow);
+}
+
+.form-submit-btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.form-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-dialog span {
+  font-size: 14px;
+  color: var(--text);
+}
+
+.form-dialog a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.form-dialog a:hover {
+  text-decoration: underline;
 }
