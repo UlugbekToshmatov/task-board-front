@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import ProtectedRoute from "../components/auth/ProtectedRoute";
 import LoginPage from "../pages/auth/LoginPage";
-import { loginLoader } from "../pages/auth/loaders";
+import { loginLoader } from "../pages/auth/authLoaders";
 import RegisterPage from "../pages/auth/RegisterPage";
 import TasksPage from "../pages/task/TasksPage";
 import TaskDetailsPage from "../pages/task/TaskDetailsPage";

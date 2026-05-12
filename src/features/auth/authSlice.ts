@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import type { User } from "../../types/auth";
+import type { User } from "../../types/authTypes";
 import { login, register } from "./authThunks";
-import type { AuthResponse } from "../../dto/authDto";
+import type { AuthResponse } from "../../dto/authDtos";
 import { isString } from "../../types/guards";
 import { getToken, getUser } from "../../app/utils";
 

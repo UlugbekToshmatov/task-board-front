@@ -11,3 +11,9 @@ export interface User {
   email?: string,
   role: UserRole
 };
+
+export interface UserRef {
+  id: string,
+  nickname: string,
+  email?: string
+}

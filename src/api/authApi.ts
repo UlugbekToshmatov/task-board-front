@@ -1,4 +1,4 @@
-import type { LoginRequest, AuthResponse, RegisterRequest } from "../dto/authDto";
+import type { LoginRequest, AuthResponse, RegisterRequest } from "../dto/authDtos";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
@@ -24,8 +24,8 @@ export async function login(loginRequest: LoginRequest): Promise<AuthResponse> {
       throw new Error(`Login failed: ${errorData.message || response.statusText}`);
     }
 
-    const data = await response.json();
-    return data as AuthResponse;
+    const data: AuthResponse = await response.json();
+    return data;
 
   } catch (error) {
     console.error("Login error: ", error);
@@ -52,8 +52,8 @@ export async function register(registerRequest: RegisterRequest): Promise<AuthRe
       throw new Error(`Registration failed: ${errorData.message || response.statusText}`);
     }
 
-    const data = await response.json();
-    return data as AuthResponse;
+    const data: AuthResponse = await response.json();
+    return data;
 
   } catch (error) {
     console.error("Registration error: ", error);

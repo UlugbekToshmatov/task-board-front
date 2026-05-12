@@ -1,4 +1,4 @@
-import type { User } from "../types/auth";
+import type { User } from "../types/authTypes";
 
 export interface LoginRequest {
   nickname: string;
